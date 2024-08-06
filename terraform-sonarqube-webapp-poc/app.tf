@@ -21,7 +21,7 @@ resource "azurerm_linux_web_app" "app_service" {
 }
 
 data "azurerm_container_registry" "acr" {
-  name                = "cr-${var.project_name}"
+  name                = "cr${var.project_name}"
   resource_group_name = "rg-${var.project_name}"
 }
 
