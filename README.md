@@ -9,9 +9,11 @@ The objective was to deploy SonarQube on Azure app service and connect with SQL 
 
 - Create login in SQL Master DB (via SSMS) 
     `CREATE LOGIN sonarqube WITH PASSWORD = '******';`
+  
 - Create user and assign db_owner role in SQL DB 
     ``CREATE USER sonarqube FOR LOGIN SonarQube WITH DEFAULT_SCHEMA = dbo; ``
     ``ALTER ROLE db_owner ADD MEMBER sonarqube; ``
+  
 - Add SonarQube details in App service setting: 
     `SONAR_JDBC_USERNAME=sonarqube` 
     `SONAR_JDBC_UPASSWORD=*******` 
